@@ -15,9 +15,10 @@ class Cutest < Formula
 
   depends_on "dpo/cutest/archdefs" => :build
   depends_on "dpo/cutest/sifdecode" => :build
-  depends_on "homebrew/versions/gcc43" => [:build, "enable-fortran"] if build.with? "matlab" # Mathworks only support gfortran 4.3.
+  #depends_on "homebrew/versions/gcc43" => [:build, "enable-fortran"] if build.with? "matlab" # Mathworks only support gfortran 4.3.    #depends_on "homebrew/versions/gcc43" => [:build, "enable-fortran"] if build.with? "matlab" # Mathworks only support gfortran 4.3.
+  depends_on "homebrew/homebrew-versions/gcc43" => [:build, "enable-fortran"] if build.with? "matlab" # Mathworks only support gfortran 4.3.
   depends_on :fortran
-  env :std
+  
 
   def install
     ENV.deparallelize
